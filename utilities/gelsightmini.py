@@ -2,7 +2,11 @@ import cv2
 import platform
 import glob
 import time
-from cv2.typing import MatLike
+import numpy as np
+try:
+    from cv2.typing import MatLike
+except ImportError:
+    MatLike = np.ndarray  # OpenCV < 4.9 or builds without cv2.typing
 import os
 import re
 import datetime
